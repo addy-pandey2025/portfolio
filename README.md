@@ -18,16 +18,43 @@ Welcome to my captivating 3D portfolio website project! Harnessing the power of 
 - **Optimized Performance**: Employ Suspense and Preload techniques to deliver a blazing-fast user experience.
 
 ## 🌐 Live Demo
-Experience it in action! Check out the <a href="https://bhupi2508.netlify.app/" target="_blank">Live Demo</a>.
+Experience it in action! Check out the live site:
+
+- GitHub Pages: https://addy-pandey2025.github.io/portfolio/
 
 
-## 🛠️ Usage
-You can easily create your own 3-D portfolio website using this project as a template. Just follow these steps:
+## 🛠️ Local Development
+You can easily create your own 3D portfolio website using this project as a template. Just follow these steps:
+
 1. Clone this repository.
 2. Navigate to the project directory.
-3. Run `npm install` to install dependencies.
-4. Modify the data in `src/constants/index.js` with your own content.
-5. Run `npm start` to start the development server.
+3. Install dependencies: `npm install`
+4. Start the dev server: `npm run dev`
+5. Modify data in `src/constants/index.js` with your own content.
+
+## 🚀 Deployment
+
+### GitHub Pages (automated)
+This repo is configured to deploy to GitHub Pages using the `gh-pages` branch.
+
+- Production URL: `https://<your-username>.github.io/portfolio/`
+- Vite base path is set in `vite.config.js` as `/portfolio/` (repository name)
+
+Two ways to deploy:
+
+1) Manual (on demand)
+
+```
+npm run deploy
+```
+
+2) Automatic (GitHub Actions)
+
+Push to `main` and the workflow publishes to GitHub Pages automatically.
+
+Ensure GitHub Pages is enabled:
+
+- Repo Settings → Pages → Source: Deploy from branch → Branch: `gh-pages`
 
 Every piece of data on the website is dynamic and originates from the constants file. Simply change the data there, and you'll have your own stunning 3-D portfolio.
 
