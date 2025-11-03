@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:svgjs="http://svgjs.dev/svgjs" width="1000" height="999" viewBox="0 0 1000 999">
+    <g transform="matrix(1,0,0,1,-0.215743440233382,-0.21552769679306039)">
+        <svg viewBox="0 0 343 343" data-background-color="#000000" preserveAspectRatio="xMidYMid meet" height="999" width="1000"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="tight-bounds" transform="matrix(1,0,0,1,0.0740000000000407,0.07400000000001228)">
+                <svg viewBox="0 0 342.85155851775386 342.85155851775386" height="342.85155851775386" width="342.85155851775386">
+                    <g>
+                        <path
+                            d="M0 171.426c0-94.676 76.75-171.426 171.426-171.426 94.676 0 171.426 76.75 171.426 171.426 0 94.676-76.75 171.426-171.426 171.426-94.676 0-171.426-76.75-171.426-171.426zM171.426 332.128c88.754 0 160.703-71.949 160.702-160.702 0-88.754-71.949-160.703-160.702-160.703-88.754 0-160.703 71.949-160.703 160.703 0 88.754 71.949 160.703 160.703 160.702z"
+                            fill="#000000" stroke="transparent"></path>
+                        <ellipse rx="164.56874808852186" ry="164.56874808852186" cx="171.42577925887693"
+                            cy="171.42577925887693" fill="#000000" stroke="transparent" stroke-width="0"
+                            fill-opacity="1"></ellipse>
+                        <g transform="matrix(1,0,0,1,64.84655864529837,111.97223535630644)">
+                            <svg viewBox="0 0 213.1584412271571 118.90708780514096" height="118.90708780514096"
+                                width="213.1584412271571">
+                                <g>
+                                    <path d="YOUR_NEW_BS_ICON_PATH_DATA_HERE" fill="#ffffff"></path>
+                                </g>
+                            </svg>
+                        </g>
+                        <text x="170" y="260" font-family="Arial" font-size="200" fill="#ffffff" text-anchor="middle">BS</text>
+                    </g>
+                    <defs></defs>
+                </svg>
+                <rect width="342.85155851775386" height="342.85155851775386" fill="none" stroke="none"
+                    visibility="hidden"></rect>
+            </g>
+        </svg>
+    </g>
+</svg>
