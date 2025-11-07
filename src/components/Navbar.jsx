@@ -2,16 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { styles } from "../styles";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { close, logo, menu } from "../assets";
-import { BsSun, BsMoon } from "react-icons/bs";
-import { useTheme } from "../context/ThemeContext";
-import {
-  navLinks,
-  navigationPaths,
-  personalInfo,
-  publicUrls,
-} from "../constants";
+import { navLinks, navigationPaths, personalInfo } from "../constants";
+import resume from "../assets/MyPort.pdf"; // ✅ Import your resume file
 
 const TypewriterText = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -20,8 +14,8 @@ const TypewriterText = ({ text }) => {
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayedText(prev => prev + text[currentIndex]);
-        setCurrentIndex(c => c + 1);
+        setDisplayedText((prev) => prev + text[currentIndex]);
+        setCurrentIndex((c) => c + 1);
       }, 150);
       return () => clearTimeout(timeout);
     }
@@ -67,6 +61,7 @@ const Navbar = () => {
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+        {/* ✅ Logo and Name */}
         <Link
           to={navigationPaths.home}
           className="flex items-center gap-2"
@@ -82,6 +77,7 @@ const Navbar = () => {
           </p>
         </Link>
 
+        {/* ✅ Desktop Menu */}
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
@@ -95,17 +91,15 @@ const Navbar = () => {
             </li>
           ))}
 
-          <li
-            className={`text-secondary text-[18px] font-medium cursor-pointer hover:text-white`}
-          >
-            <a
-              href={publicUrls.resume}
-            >
+          {/* ✅ Resume Download Link */}
+          <li className="text-secondary text-[18px] font-medium cursor-pointer hover:text-white">
+            <a href={resume} download="Adarsh_Pandey_Resume.pdf">
               Resume
             </a>
           </li>
         </ul>
 
+        {/* ✅ Mobile Menu */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
@@ -135,10 +129,9 @@ const Navbar = () => {
                 </li>
               ))}
 
-              <li
-                className={`text-secondary text-[18px] font-medium cursor-pointer hover:text-white`}
-              >
-                <a href={publicUrls.resume}>
+              {/* ✅ Mobile Resume Download */}
+              <li className="text-secondary text-[18px] font-medium cursor-pointer hover:text-white">
+                <a href={resume} download="Adarsh_Pandey_Resume.pdf">
                   Resume
                 </a>
               </li>
