@@ -1,8 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { styles } from "../styles";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { close, logo, menu } from "../assets";
+import { BsSun, BsMoon } from "react-icons/bs";
+import { useTheme } from "../context/ThemeContext";
 import {
   navLinks,
   navigationPaths,
@@ -10,13 +13,58 @@ import {
   publicUrls,
 } from "../constants";
 
+const TypewriterText = ({ text }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(c => c + 1);
+      }, 150);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text]);
+
+  return (
+    <motion.span
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="text-[#915EFF]"
+    >
+      {displayedText}
+      <motion.span
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.5, repeat: Infinity }}
+        className="inline-block ml-1"
+      >
+        |
+      </motion.span>
+    </motion.span>
+  );
+};
+
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav
-      className={`${styles.paddingX} py-5 w-full flex items-center fixed top-0 z-20 bg-primary`}
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`${styles.paddingX} py-5 w-full flex items-center fixed top-0 z-20 transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-lg bg-primary/80 shadow-lg" : "bg-primary"
+      }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
@@ -98,7 +146,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

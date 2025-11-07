@@ -270,6 +270,12 @@ const personalInfo = {
   fullName: "Adarsh Pandey",
   email: "aadarshpandey43@gmail.com",
   role: "Full Stack Developer",
+  // Point to a public image placed at `public/profile.jpg` (see README below)
+  // Try `public/image.png` first (you asked for image.png). If it's not present or fails
+  // to load, `Hero.jsx` will fall back to `/profile.svg` placeholder.
+  // Set to `/profile.jpg` so the Hero requests the user's photo in `public/profile.jpg`.
+  // Please attach the JPEG here or place it in `public/profile.jpg` locally.
+  profileImage: "/profile.jpg",
   about: `Proactive IT professional with 5+ years of experience specializing in Full Stack development. Highly skilled in microservices, cloud technologies, and efficient problem-solving. Known for delivering well-documented, tested, and scalable solutions with strong collaborative skills and a focus on continuous improvement.`,
   projectsIntro: `Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described, reflecting my ability to solve complex problems, work with different technologies, and manage projects effectively :-`,
 };
@@ -291,6 +297,37 @@ const publicUrls = {
   },
 };
 
+const certifications = [
+  {
+    title: "AWS Certified Solutions Architect",
+    organization: "Amazon Web Services",
+    date: "2023",
+    credentialLink: "https://www.credly.com/badges/your-badge-id",
+    image: "https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png",
+  },
+  {
+    title: "Node.js Developer Certificate",
+    organization: "OpenJS Foundation",
+    date: "2022",
+    credentialLink: "https://www.example.com/certification/nodejs",
+    image: "https://nodejs.org/static/images/logo.svg",
+  },
+  {
+    title: "Docker Certified Associate",
+    organization: "Docker Inc.",
+    date: "2023",
+    credentialLink: "https://www.docker.com/certified-content/dca",
+    image: "https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png",
+  },
+  {
+    title: "MongoDB Developer Certification",
+    organization: "MongoDB University",
+    date: "2023",
+    credentialLink: "https://university.mongodb.com/certification",
+    image: "https://www.mongodb.com/assets/images/global/leaf.png",
+  }
+];
+
 export {
   services,
   technologies,
@@ -299,4 +336,5 @@ export {
   navigationPaths,
   personalInfo,
   publicUrls,
+  certifications,
 };

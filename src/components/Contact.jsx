@@ -23,6 +23,7 @@ const Contact = () => {
     message: "",
     buttonText: "",
   });
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,12 +79,14 @@ const Contact = () => {
       .finally(() => setLoading(false));
   };
 
+  
+
   return (
     <>
-      <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
+      <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-16 overflow-hidden">
         <motion.div
           variants={slideIn("left", "tween", 0.2, 1)}
-          className="relative flex-[0.75] bg-black-100 p-8 rounded-2xl"
+          className="relative flex-[0.6] bg-black-100 p-8 rounded-2xl"
         >
           <div className="flex items-center justify-end space-x-4 absolute top-8 right-4">
             {Object.keys(publicUrls.socialProfiles).map((socialProfile) => {
@@ -155,21 +158,28 @@ const Contact = () => {
               {loading ? "Sending..." : "Send"}
             </button>
           </form> */}
-          <div>
-            <p>
-              The email functionality is currently in progress. Please send your queries on mail
-              <a href="mailto:aadarshpandey43@gmail.com"></a>.
+          <div className="flex flex-col items-start space-y-6">
+            <p className="text-white-100 text-[18px]">
+              The contact form is currently in development. Meanwhile, feel free to reach out via email:
             </p>
-            <a href="mailto:aadarshpandey43@gmail.com" className="mt-4 inline-block center bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600 ">
-              Send Email
-            </a>
+            <motion.a 
+              href={`mailto:${personalInfo.email}`}
+              className="flex items-center space-x-3 bg-tertiary py-3 px-6 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary hover:bg-[#915eff] transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Send Email</span>
+            </motion.a>
           </div>
 
         </motion.div>
 
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
-          className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+          className="xl:flex-1 xl:h-auto md:h-[650px] h-[450px] xl:mt-8"
         >
           <EarthCanvas />
         </motion.div>
